@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from IPython.display import clear_output, display, HTML
 
 models_info = [
+    ('https://github.com/karaokenerds/python-audio-separator/releases/download/v0.12.1/onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl', 'onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl', '/content/roop/'),
     ('https://huggingface.co/countfloyd/deepfake/resolve/main/inswapper_128.onnx', 'inswapper_128.onnx', '/content/roop/models/'),
     ('https://huggingface.co/countfloyd/deepfake/resolve/main/GFPGANv1.4.onnx', 'GFPGANv1.4.onnx', '/content/roop/models/'),
     ('https://github.com/csxmli2016/DMDNet/releases/download/v1/DMDNet.pth', 'DMDNet.pth', '/content/roop/models/'),
@@ -77,7 +78,7 @@ def install_dependencies():
         'pip install --progress-bar off --quiet /content/roop/onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl',
         'pip install --progress-bar off --quiet onnx==1.16.0 insightface==0.7.3 tk==0.1.0 customtkinter==5.2.0 gfpgan==1.3.8 protobuf==3.20.3',
         'pip install --progress-bar off --quiet --no-cache-dir -I tkinterdnd2-universal==1.7.3 tkinterdnd2==0.3.0',
-        'pip install --progress-bar off --quiet gradio==4.44.0 fastapi==0.112.4 ftfy pyvirtualcam'
+        'pip install --progress-bar off --quiet gradio==4.44.0 fastapi==0.112.4 ftfy pyvirtualcam pyngrok==6.0.0 pycloudflared==0.2.0'
     ]:
         result = subprocess.run(cmd, shell=True)
         print(f"{' '.join(cmd.split()[5:])} installed successfully." if result.returncode == 0 else "")
